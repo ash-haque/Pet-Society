@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Animal Care centre — Article</title>
+  <style>
+    :root{
+      --header-h: 12vh; /* increased height */
+      --nav-btn-h: 6vh; /* increased nav height */
+      --break-h: 9vh; /* slightly bigger breaker */
+      --container-width: 75%;
+      --breaker-color: #ffd6a5;
+      --bg: #eaf6ff; /* light blue off-white */
+      --text: #222;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+      min-height:200vh;
+    }
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 2rem;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(0,0,0,0.06);
+    }
+    .brand{display:flex;align-items:center;gap:1rem}
+    .brand .logo{
+      width:calc(var(--header-h) * 0.7);
+      height:calc(var(--header-h) * 0.7);
+      background:#ffe7e7;
+      border-radius:8px;
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+    }
+    .brand h2{margin:0;font-size:1.4rem}
+    .nav{display:flex;gap:0.6rem;align-items:center}
+    .nav a{
+      text-decoration:none;
+      display:inline-flex;align-items:center;justify-content:center;
+      height:var(--nav-btn-h);
+      padding:0 14px;font-size:1rem;border-radius:8px;
+      border:1px solid rgba(0,0,0,0.08);
+      background:linear-gradient(180deg,#fff,#f7f7f7);
+      color:#333;
+    }
+    .nav a.primary{background:#ff6b6b;color:white;border:none}
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+      z-index: 1001;
+      border-radius: 6px;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-content a:hover {
+      background-color: #f9f9f9;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .breaker{
+      width:100%;height:var(--break-h);
+      background:var(--breaker-color);
+      display:flex;align-items:center;justify-content:center;font-weight:600;color:#6b3a00;
+      font-size:1.1rem;
+    }
+    .container{width:var(--container-width);margin:2rem auto}
+    .article-title{text-align:center;margin:1.5rem 0}
+    .article-title h1{margin:0;font-size:clamp(1.5rem,2.5vw,2.2rem);line-height:1.15}
+    .two-col{display:flex;gap:2rem;align-items:flex-start;margin-top:1.2rem}
+    .two-col .text{width:50%;min-height:18vh}
+    .two-col .text p{margin:0;padding:0.5rem 0;font-size:1.05rem}
+    .two-col .image{width:50%;min-height:22vh;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#777;border:2px dashed rgba(0,0,0,0.06);background:linear-gradient(180deg,#fafafa,#f0f0f0)}
+    .section{margin-top:2.5rem}
+    .section h2{font-size:1.5rem;margin-bottom:0.6rem}
+    .section .full-paragraph{width:100%;min-height:17vh;background:#fff;padding:1rem;border-radius:8px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 18px rgba(0,0,0,0.03)}
+    .img-row{display:flex;gap:1rem;margin-top:1rem}
+    .img-row .img-box{flex:1;min-height:20vh;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(0,0,0,0.06);background:#fff}
+    .img-box .label{margin-top:0.6rem;font-size:0.9rem;color:#555}
+    .single-heading{margin-top:2rem;background:#fff;padding:1rem;border-radius:8px;border:1px solid rgba(0,0,0,0.04)}
+    .single-heading h3{margin-top:0;font-size:1.3rem}
+    .single-heading p{font-size:1.05rem}
+    .single-heading .image{min-height:14vh;margin-top:8px;border:2px dashed rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;color:#777;background:linear-gradient(180deg,#fafafa,#f0f0f0)}
+    @media (max-width:900px){
+      .container{width:90%}
+      .two-col{flex-direction:column}
+      .two-col .text,.two-col .image{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="brand">
+      <div class="logo">AC</div>
+      <h2>Animal Care centre</h2>
+    </div>
+    <nav class="nav" role="navigation">
+      <a href="#">About</a>
+
+      <div class="dropdown">
+        <a href="services.html" class="dropbtn">Services</a>
+        <div class="dropdown-content">
+          <a href="animal_registration.php">Animal Register</a>
+          <a href="pet-checkup.html">Pet Checkup</a>
+          <a href="pet-boarding.html">Pet Boarding</a>
+        </div>
+      </div>
+
+      <a href="pet-owner-education.html" class="primary">Pet Owner Education</a>
+      <a href="24-hour-emergency-service.html" class="primary">24-Hour Emergency service</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="breaker">Trusted care for your pets — open 24/7</div>
+
+  <main class="container" role="main">
+    <section class="article-title">
+      <h1>Why is my cat’s breathing noisy? All About Nasopharyngeal Polyps</h1>
+    </section>
+    <section class="two-col">
+      <div class="text">
+        <p>Noisy breathing is common in cats. It can result from a variety of conditions, including: an upper respiratory infection, a sinus infection (from dental disease or a nasal foreign body), a tumor in the nose, nasopharyngeal stenosis (a narrowing of the back of the throat) or a nasopharyngeal polyp. Today’s blogpost details feline nasopharyngeal polyps.</p>
+      </div>
+      <div class="image"><img src="Nasopharyngeal Polyps.jpeg" alt=""></div>
+    </section>
+    <section class="section">
+      <h2>Defining a Polyp</h2>
+      <div class="full-paragraph">
+        <p>Polyps are smooth, benign masses that typically occur in a cat’s throat or ears. The two photos accompanying this blogpost show polyps in two different cats. One is a fairly large polyp in the nasopharynx and the other occurs near the choanae, or the connection between the nose and the back of the throat.</p>
+      </div>
+      <div class="img-row">
+        <div class="img-box"><img src="Defining a Polyp1.webp" alt=""><div class="label">A large nasopharyngeal polyp</div></div>
+        <div class="img-box"><img src="Defining a Polyp2.webp" alt=""><div class="label">A polyp in the choanae</div></div>
+      </div>
+    </section>
+    <section class="single-heading">
+      <h1>The Cause of Feline Polyps is Unclear</h1>
+      <p>Nasopharyngeal polyps typically occur in cats less than two years of age, but can occur in any age cat. While the exact cause of polyps in cats is unknown, a birth defect has been considered a potential cause due to the young age of most cats with polyps. Viral and bacterial infections have also been associated with the development of nasopharyngeal polyps, but it is unclear if the infection is the cause or result of the polyp. What is clear is that polyps are the second most common cause of disease in the nasopharynx after lymphoma, according to a study from the Schwarzman Animal Medical Center.</p>
+    </section>
+    <section class="single-heading">
+      <h1>Clinical Signs of Feline Polyps</h1>
+      <p>Cats with polyps exhibit a wide variety of clinical signs of varying severity. Noisy breathing tops the list, but upper respiratory signs like sneezing or nasal discharge can also occur. If the polyp occurs near the larynx, you may notice a change in your cat’s meow. Cats with polyps will sometimes gulp unrelated to eating and may frequently have ear infections.
+
+If you suspect your cat has a polyp, discuss it with your veterinarian. If your cat’s clinical signs appear to be getting worse or impact their quality of life, make an appointment with your veterinarian as soon as possible.</p>
+    </section>
+    <section class="single-heading">
+      <h1>Removing Polyps in Cats</h1>
+      <p>The treatment of feline nasopharyngeal polyps ranges from simple to complex. If the polyp is easily seen, “traction avulsion,” or pulling the polyp out using surgical instruments, is the most common treatment. If the polyp is not easily seen, more advanced surgical techniques may be used. For some cats, the middle ear becomes chronically infected and cleaning it requires a surgical procedure called bulla osteotomy</p>
+      <div class="image"><img src="removing polips in case.png" alt=""></div>
+    </section>
+  </main>
+
+  <footer style="text-align:center;margin:3rem auto 6rem;width:var(--container-width);color:#777;font-size:0.9rem">
+    Animal Care centre — © <span id="year"></span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?php
+// Connect to database
+include 'db.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Registered Animals</title>
+<style>
+body { font-family: Arial, sans-serif; background: #eaf6ff; margin: 0; padding: 0; }
+.header { background: #4CAF50; color: white; padding: 15px; text-align: center; font-size: 1.5rem; font-weight: bold; }
+.container { max-width: 1000px; margin: 30px auto; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+h2 { text-align: center; margin-bottom: 20px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background: #4CAF50; color: white; }
+img { max-width: 80px; max-height: 60px; border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<div class="header">Animal Care Centre — Registered Animals</div>
+<div class="container">
+<h2>Registered Animals</h2>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Type</th>
+<th>Breed</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Owner Name</th>
+<th>Owner Contact</th>
+<th>Medical Notes</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$sql = "SELECT * FROM animals ORDER BY id DESC";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>
+            <td>".htmlspecialchars($row['id'])."</td>
+            <td>".htmlspecialchars($row['animal_name'])."</td>
+            <td>".htmlspecialchars($row['animal_type'])."</td>
+            <td>".htmlspecialchars($row['breed'])."</td>
+            <td>".htmlspecialchars($row['age'])."</td>
+            <td>".htmlspecialchars($row['gender'])."</td>
+            <td>".htmlspecialchars($row['owner_name'])."</td>
+            <td>".htmlspecialchars($row['owner_contact'])."</td>
+            <td>".htmlspecialchars($row['medical_notes'])."</td>
+            <td>".($row['image_path'] ? "<img src='".$row['image_path']."' alt='Animal'>" : "No Image")."</td>
+        </tr>";
+    }
+} else {
+    echo "<tr><td colspan='10' style='text-align:center;'>No animals registered yet.</td></tr>";
+}
+
+$conn->close();
+?>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
+
+

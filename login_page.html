@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Animal Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .login-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2f80ed;
+    }
+    .login-box form {
+      display: flex;
+      flex-direction: column;
+    }
+    .login-box input {
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    .login-box button {
+      padding: 12px;
+      background-color: #2f80ed;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .login-box button:hover {
+      background-color: #2563eb;
+    }
+    .login-box .bottom-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .login-box .bottom-links a {
+      color: #2f80ed;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+    .login-box .bottom-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2><i class="fas fa-sign-in-alt"></i> Log In</h2>
+    <form action="/login" method="POST">
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="bottom-links">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      <p><a href="index.html">← Back to Home</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+

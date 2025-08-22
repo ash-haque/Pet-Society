@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | Animal Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .signup-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+    .signup-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2f80ed;
+    }
+    .signup-box form {
+      display: flex;
+      flex-direction: column;
+    }
+    .signup-box input {
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    .signup-box button {
+      padding: 12px;
+      background-color: #2f80ed;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .signup-box button:hover {
+      background-color: #2563eb;
+    }
+    .signup-box .bottom-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .signup-box .bottom-links a {
+      color: #2f80ed;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+    .signup-box .bottom-links a:hover {
+      text-decoration: underline;
+    }
+    .note {
+      font-size: 13px;
+      color: #888;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-box">
+    <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
+    <form action="/signup" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Create Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <div class="note">An email will be sent to verify your address.</div>
+      <button type="submit">Create Account</button>
+    </form>
+
+    <div class="bottom-links">
+      <p>Already have an account? <a href="login_page.html">Login</a></p>
+      <p><a href="index.html">← Back to Home</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
