@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractive Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Fixed Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0f3057;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Full background image (use your own uploaded image like hero.jpg) */
+    .hero {
+      background: url(DOG\ AND\ CAT\ VACCINATIONS.jpg) no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+      margin-top: 70px; /* offset for fixed header */
+    }
+
+    /* Big heading */
+    .big-heading {
+      text-align: center;
+      font-size: 50px;
+      margin: 60px 20px;
+      color: #0f3057;
+    }
+
+    /* Round box for paragraph */
+    .round-box {
+      width: 90%;
+      height: 20vh;
+      margin: 30px auto;
+      background: #e6f7ff;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Image + text side by side */
+    .content-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+    }
+
+    .content-section img {
+      width: 40%;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .content-text {
+      width: 50%;
+      padding: 20px;
+    }
+
+    .content-text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #0f3057;
+    }
+
+    .content-text p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Round Button */
+    .appointment-btn {
+      display: block;
+      margin: 40px auto;
+      background: #0f3057;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .appointment-btn:hover {
+      background: #ffcc00;
+      color: #0f3057;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f3057;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #ffcc00;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>My Website</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="services.html">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Provide Vaccine </h1>
+  </div>
+
+  <!-- Big Heading -->
+  <h2 class="big-heading">DOG AND CAT VACCINATIONS</h2>
+
+  <!-- Round Paragraph Box -->
+  <div class="round-box">
+    <p>
+      At Superior Animal Clinic, we prioritize the health and well-being of your furry family member. Our Pet Vaccination services are designed to provide a strong defense against a range of preventable diseases, ensuring a long and vibrant life for your pet. Explore the importance of vaccinations and how our veterinary team can customize a vaccination plan tailored to your pet’s unique needs
+    </p>
+  </div>
+
+  <!-- Image + Text Section -->
+  <div class="content-section">
+    <!-- Use your uploaded image file, e.g., service.jpg -->
+    <img src="DOG AND CAT VACCINATIONS 2.jpg" alt="Sample Image">
+    <div class="content-text">
+      <h2>Why Choose Vaccinations at Our Animal Clinic?</h2>
+      <p>
+        1 . Customized Vaccination Plans:
+        Our veterinarians assess your pet’s individual risk factors, lifestyle, and health status to create a personalized vaccination plan.
+
+        2 . Disease Prevention:
+        Vaccinations are a crucial tool in preventing the spread of contagious diseases among pets.
+
+        3 . Regular Health Assessments:
+        Vaccination appointments also provide an opportunity for a comprehensive health check-up, allowing early detection of potential issues.
+      </p>
+    </div>
+  </div>
+
+  <!-- Round Appointment Button -->
+  <a href="register_appointment.php"><button class="appointment-btn">Make Appointment</button></a>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Website | All rights reserved</p>
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Terms & Conditions</a>
+  </footer>
+
+</body>
+</html>
