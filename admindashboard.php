@@ -1,7 +1,9 @@
 <?php
 // Connect to DB
 $conn = new mysqli("localhost", "root", "", "animal_care");
-if ($conn->connect_error) die("Connection failed: " . $conn->connect_error");
+if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
+
+
 
 // Fetch counts dynamically
 $animalCount = $conn->query("SELECT COUNT(*) AS total FROM animals")->fetch_assoc()['total'] ?? 0;

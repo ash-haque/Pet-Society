@@ -4,12 +4,13 @@ if($conn->connect_error) die("Connection failed: ".$conn->connect_error);
 
 $message = "";
 if($_SERVER['REQUEST_METHOD']=="POST"){
-    $name = $_POST['vet_name'];
+    $vet_name = $_POST['vet_name'];
     $specialization = $_POST['specialization'];
     $phone = $_POST['phone'];
 
-    $stmt = $conn->prepare("INSERT INTO vets (name, specialization, phone) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss",$name,$specialization,$phone);
+    // Correct column names
+    $stmt = $conn->prepare("INSERT INTO vets (vet_name, specialization, phone) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss",$vet_name,$specialization,$phone);
 
     if($stmt->execute()) $message = "Vet added successfully!";
     else $message = "Error: ".$stmt->error;
@@ -45,3 +46,4 @@ button:hover{background:#005bb5;}
 </div>
 </body>
 </html>
+

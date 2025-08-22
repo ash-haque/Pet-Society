@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 // Fetch animals and vets for dropdown
 $animals = $conn->query("SELECT id, animal_name FROM animals ORDER BY animal_name ASC");
-$vet_list = $conn->query("SELECT id, name FROM vets ORDER BY name ASC");
+$vet_list = $conn->query("SELECT id, vet_name FROM vets ORDER BY vet_name ASC"); // Updated column
 
 $conn->close();
 ?>
@@ -56,7 +56,7 @@ button:hover{background:#005bb5;}
         <label>Select Vet</label>
         <select name="vet_id" required>
             <option value="">--Select Vet--</option>
-            <?php while($v=$vet_list->fetch_assoc()) echo "<option value='{$v['id']}'>{$v['name']}</option>"; ?>
+            <?php while($v=$vet_list->fetch_assoc()) echo "<option value='{$v['id']}'>{$v['vet_name']}</option>"; ?>
         </select>
 
         <label>Date</label>
@@ -70,3 +70,4 @@ button:hover{background:#005bb5;}
 </div>
 </body>
 </html>
+
